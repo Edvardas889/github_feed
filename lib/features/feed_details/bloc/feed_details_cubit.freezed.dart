@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'main_feed_cubit.dart';
+part of 'feed_details_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,12 +15,12 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$MainFeedState {
+mixin _$FeedDetailsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<String> mainFeedUrls) loaded,
+    required TResult Function(AtomFeed atomFeed) loaded,
     required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$MainFeedState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<String> mainFeedUrls)? loaded,
+    TResult? Function(AtomFeed atomFeed)? loaded,
     TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$MainFeedState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<String> mainFeedUrls)? loaded,
+    TResult Function(AtomFeed atomFeed)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) =>
@@ -45,7 +45,7 @@ mixin _$MainFeedState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(LoadedFeedDetailsState value) loaded,
     required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -53,7 +53,7 @@ mixin _$MainFeedState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(LoadedFeedDetailsState value)? loaded,
     TResult? Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +61,7 @@ mixin _$MainFeedState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(LoadedFeedDetailsState value)? loaded,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
@@ -69,23 +69,23 @@ mixin _$MainFeedState {
 }
 
 /// @nodoc
-abstract class $MainFeedStateCopyWith<$Res> {
-  factory $MainFeedStateCopyWith(
-          MainFeedState value, $Res Function(MainFeedState) then) =
-      _$MainFeedStateCopyWithImpl<$Res, MainFeedState>;
+abstract class $FeedDetailsStateCopyWith<$Res> {
+  factory $FeedDetailsStateCopyWith(
+          FeedDetailsState value, $Res Function(FeedDetailsState) then) =
+      _$FeedDetailsStateCopyWithImpl<$Res, FeedDetailsState>;
 }
 
 /// @nodoc
-class _$MainFeedStateCopyWithImpl<$Res, $Val extends MainFeedState>
-    implements $MainFeedStateCopyWith<$Res> {
-  _$MainFeedStateCopyWithImpl(this._value, this._then);
+class _$FeedDetailsStateCopyWithImpl<$Res, $Val extends FeedDetailsState>
+    implements $FeedDetailsStateCopyWith<$Res> {
+  _$FeedDetailsStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MainFeedState
+  /// Create a copy of FeedDetailsState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -98,13 +98,13 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$MainFeedStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$FeedDetailsStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MainFeedState
+  /// Create a copy of FeedDetailsState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -115,7 +115,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'MainFeedState.initial()';
+    return 'FeedDetailsState.initial()';
   }
 
   @override
@@ -132,7 +132,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<String> mainFeedUrls) loaded,
+    required TResult Function(AtomFeed atomFeed) loaded,
     required TResult Function() error,
   }) {
     return initial();
@@ -143,7 +143,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<String> mainFeedUrls)? loaded,
+    TResult? Function(AtomFeed atomFeed)? loaded,
     TResult? Function()? error,
   }) {
     return initial?.call();
@@ -154,7 +154,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<String> mainFeedUrls)? loaded,
+    TResult Function(AtomFeed atomFeed)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -169,7 +169,7 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(LoadedFeedDetailsState value) loaded,
     required TResult Function(_Error value) error,
   }) {
     return initial(this);
@@ -180,7 +180,7 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(LoadedFeedDetailsState value)? loaded,
     TResult? Function(_Error value)? error,
   }) {
     return initial?.call(this);
@@ -191,7 +191,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(LoadedFeedDetailsState value)? loaded,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -202,7 +202,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements MainFeedState {
+abstract class _Initial implements FeedDetailsState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -215,13 +215,13 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$MainFeedStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$FeedDetailsStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MainFeedState
+  /// Create a copy of FeedDetailsState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -232,7 +232,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'MainFeedState.loading()';
+    return 'FeedDetailsState.loading()';
   }
 
   @override
@@ -249,7 +249,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<String> mainFeedUrls) loaded,
+    required TResult Function(AtomFeed atomFeed) loaded,
     required TResult Function() error,
   }) {
     return loading();
@@ -260,7 +260,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<String> mainFeedUrls)? loaded,
+    TResult? Function(AtomFeed atomFeed)? loaded,
     TResult? Function()? error,
   }) {
     return loading?.call();
@@ -271,7 +271,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<String> mainFeedUrls)? loaded,
+    TResult Function(AtomFeed atomFeed)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -286,7 +286,7 @@ class _$LoadingImpl implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(LoadedFeedDetailsState value) loaded,
     required TResult Function(_Error value) error,
   }) {
     return loading(this);
@@ -297,7 +297,7 @@ class _$LoadingImpl implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(LoadedFeedDetailsState value)? loaded,
     TResult? Function(_Error value)? error,
   }) {
     return loading?.call(this);
@@ -308,7 +308,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(LoadedFeedDetailsState value)? loaded,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -319,92 +319,88 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements MainFeedState {
+abstract class _Loading implements FeedDetailsState {
   const factory _Loading() = _$LoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$LoadedImplCopyWith<$Res> {
-  factory _$$LoadedImplCopyWith(
-          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
-      __$$LoadedImplCopyWithImpl<$Res>;
+abstract class _$$LoadedFeedDetailsStateImplCopyWith<$Res> {
+  factory _$$LoadedFeedDetailsStateImplCopyWith(
+          _$LoadedFeedDetailsStateImpl value,
+          $Res Function(_$LoadedFeedDetailsStateImpl) then) =
+      __$$LoadedFeedDetailsStateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<String> mainFeedUrls});
+  $Res call({AtomFeed atomFeed});
 }
 
 /// @nodoc
-class __$$LoadedImplCopyWithImpl<$Res>
-    extends _$MainFeedStateCopyWithImpl<$Res, _$LoadedImpl>
-    implements _$$LoadedImplCopyWith<$Res> {
-  __$$LoadedImplCopyWithImpl(
-      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
+class __$$LoadedFeedDetailsStateImplCopyWithImpl<$Res>
+    extends _$FeedDetailsStateCopyWithImpl<$Res, _$LoadedFeedDetailsStateImpl>
+    implements _$$LoadedFeedDetailsStateImplCopyWith<$Res> {
+  __$$LoadedFeedDetailsStateImplCopyWithImpl(
+      _$LoadedFeedDetailsStateImpl _value,
+      $Res Function(_$LoadedFeedDetailsStateImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MainFeedState
+  /// Create a copy of FeedDetailsState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mainFeedUrls = null,
+    Object? atomFeed = null,
   }) {
-    return _then(_$LoadedImpl(
-      null == mainFeedUrls
-          ? _value._mainFeedUrls
-          : mainFeedUrls // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+    return _then(_$LoadedFeedDetailsStateImpl(
+      null == atomFeed
+          ? _value.atomFeed
+          : atomFeed // ignore: cast_nullable_to_non_nullable
+              as AtomFeed,
     ));
   }
 }
 
 /// @nodoc
 
-class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl(final List<String> mainFeedUrls)
-      : _mainFeedUrls = mainFeedUrls;
+class _$LoadedFeedDetailsStateImpl implements LoadedFeedDetailsState {
+  const _$LoadedFeedDetailsStateImpl(this.atomFeed);
 
-  final List<String> _mainFeedUrls;
   @override
-  List<String> get mainFeedUrls {
-    if (_mainFeedUrls is EqualUnmodifiableListView) return _mainFeedUrls;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_mainFeedUrls);
-  }
+  final AtomFeed atomFeed;
 
   @override
   String toString() {
-    return 'MainFeedState.loaded(mainFeedUrls: $mainFeedUrls)';
+    return 'FeedDetailsState.loaded(atomFeed: $atomFeed)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadedImpl &&
-            const DeepCollectionEquality()
-                .equals(other._mainFeedUrls, _mainFeedUrls));
+            other is _$LoadedFeedDetailsStateImpl &&
+            (identical(other.atomFeed, atomFeed) ||
+                other.atomFeed == atomFeed));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_mainFeedUrls));
+  int get hashCode => Object.hash(runtimeType, atomFeed);
 
-  /// Create a copy of MainFeedState
+  /// Create a copy of FeedDetailsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
-      __$$LoadedImplCopyWithImpl<_$LoadedImpl>(this, _$identity);
+  _$$LoadedFeedDetailsStateImplCopyWith<_$LoadedFeedDetailsStateImpl>
+      get copyWith => __$$LoadedFeedDetailsStateImplCopyWithImpl<
+          _$LoadedFeedDetailsStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<String> mainFeedUrls) loaded,
+    required TResult Function(AtomFeed atomFeed) loaded,
     required TResult Function() error,
   }) {
-    return loaded(mainFeedUrls);
+    return loaded(atomFeed);
   }
 
   @override
@@ -412,10 +408,10 @@ class _$LoadedImpl implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<String> mainFeedUrls)? loaded,
+    TResult? Function(AtomFeed atomFeed)? loaded,
     TResult? Function()? error,
   }) {
-    return loaded?.call(mainFeedUrls);
+    return loaded?.call(atomFeed);
   }
 
   @override
@@ -423,12 +419,12 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<String> mainFeedUrls)? loaded,
+    TResult Function(AtomFeed atomFeed)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(mainFeedUrls);
+      return loaded(atomFeed);
     }
     return orElse();
   }
@@ -438,7 +434,7 @@ class _$LoadedImpl implements _Loaded {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(LoadedFeedDetailsState value) loaded,
     required TResult Function(_Error value) error,
   }) {
     return loaded(this);
@@ -449,7 +445,7 @@ class _$LoadedImpl implements _Loaded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(LoadedFeedDetailsState value)? loaded,
     TResult? Function(_Error value)? error,
   }) {
     return loaded?.call(this);
@@ -460,7 +456,7 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(LoadedFeedDetailsState value)? loaded,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -471,16 +467,17 @@ class _$LoadedImpl implements _Loaded {
   }
 }
 
-abstract class _Loaded implements MainFeedState {
-  const factory _Loaded(final List<String> mainFeedUrls) = _$LoadedImpl;
+abstract class LoadedFeedDetailsState implements FeedDetailsState {
+  const factory LoadedFeedDetailsState(final AtomFeed atomFeed) =
+      _$LoadedFeedDetailsStateImpl;
 
-  List<String> get mainFeedUrls;
+  AtomFeed get atomFeed;
 
-  /// Create a copy of MainFeedState
+  /// Create a copy of FeedDetailsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LoadedFeedDetailsStateImplCopyWith<_$LoadedFeedDetailsStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -492,13 +489,13 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$MainFeedStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$FeedDetailsStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MainFeedState
+  /// Create a copy of FeedDetailsState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -509,7 +506,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'MainFeedState.error()';
+    return 'FeedDetailsState.error()';
   }
 
   @override
@@ -526,7 +523,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<String> mainFeedUrls) loaded,
+    required TResult Function(AtomFeed atomFeed) loaded,
     required TResult Function() error,
   }) {
     return error();
@@ -537,7 +534,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<String> mainFeedUrls)? loaded,
+    TResult? Function(AtomFeed atomFeed)? loaded,
     TResult? Function()? error,
   }) {
     return error?.call();
@@ -548,7 +545,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<String> mainFeedUrls)? loaded,
+    TResult Function(AtomFeed atomFeed)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -563,7 +560,7 @@ class _$ErrorImpl implements _Error {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(LoadedFeedDetailsState value) loaded,
     required TResult Function(_Error value) error,
   }) {
     return error(this);
@@ -574,7 +571,7 @@ class _$ErrorImpl implements _Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(LoadedFeedDetailsState value)? loaded,
     TResult? Function(_Error value)? error,
   }) {
     return error?.call(this);
@@ -585,7 +582,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(LoadedFeedDetailsState value)? loaded,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -596,6 +593,6 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements MainFeedState {
+abstract class _Error implements FeedDetailsState {
   const factory _Error() = _$ErrorImpl;
 }
