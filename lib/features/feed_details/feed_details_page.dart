@@ -31,12 +31,20 @@ class _FeedDetailsPage extends StatefulWidget {
 }
 
 class _FeedDetailsPageState extends State<_FeedDetailsPage> {
+  late final FeedDetailsCubit feedDetailsCubit;
   @override
   void initState() {
+    feedDetailsCubit = context.read<FeedDetailsCubit>();
     super.initState();
     Future.delayed(Duration.zero, () {
-      if (mounted) context.read<FeedDetailsCubit>().load(widget.url);
+      if (mounted) feedDetailsCubit.load(widget.url);
     });
+  }
+
+  @override
+  void dispose() {
+    feedDetailsCubit.stopAutoFetch();
+    super.dispose();
   }
 
   @override
