@@ -2,6 +2,7 @@ import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:github_feed/features/feed_details/bloc/feed_details_cubit.dart';
+import 'package:github_feed/features/feed_details/widgets/additional_params_entry_form.dart';
 import 'package:github_feed/features/feed_details/widgets/feed_item_details_card.dart';
 
 @RoutePage()
@@ -32,6 +33,7 @@ class _FeedDetailsPage extends StatefulWidget {
 
 class _FeedDetailsPageState extends State<_FeedDetailsPage> {
   late final FeedDetailsCubit feedDetailsCubit;
+
   @override
   void initState() {
     feedDetailsCubit = context.read<FeedDetailsCubit>();
@@ -70,6 +72,17 @@ class _FeedDetailsPageState extends State<_FeedDetailsPage> {
               loading: (_) => Center(
                 child: CircularProgressIndicator(),
               ),
+              paramsNeeded: (paramsNeededState) => AdditionalParamsEntryForm(
+                originalUrl: widget.url,
+                requiredParams: paramsNeededState.paramsList,
+              ),
+              empty: (_) => Center(
+                  child: Text(
+                "No feed available",
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              )),
               loaded: (loadedFeedDetailsState) => SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -80,7 +93,13 @@ class _FeedDetailsPageState extends State<_FeedDetailsPage> {
                       .toList(),
                 ),
               ),
-              orElse: () => const SizedBox.shrink(),
+              orElse: () => Center(
+                  child: Text(
+                "Error while fetching data occurred",
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              )),
             );
           },
         ),

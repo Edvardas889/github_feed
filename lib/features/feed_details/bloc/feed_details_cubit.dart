@@ -11,6 +11,7 @@ part 'feed_details_cubit.freezed.dart';
 
 class FeedDetailsCubit extends Cubit<FeedDetailsState> {
   final FeedDetailsRepository feedDetailsRepository;
+  final _urlParamsRegex = RegExp(r'\{(\w+)\}');
   Timer? _autoFetchTimer;
 
   FeedDetailsCubit(
@@ -23,6 +24,11 @@ class FeedDetailsCubit extends Cubit<FeedDetailsState> {
 
       if (!autoFetchEnabled) {
         emit(const FeedDetailsState.loading());
+        final matches = _urlParamsRegex.allMatches(url);
+        final params = matches.map((match) => match.group(1)).toList();
+        if (params.isNotEmpty) {
+          return emit(FeedDetailsState.paramsNeeded(params));
+        }
         //to show loader
         await Future.delayed(Duration(seconds: 1));
       }
@@ -33,7 +39,11 @@ class FeedDetailsCubit extends Cubit<FeedDetailsState> {
         if (_autoFetchTimer == null) {
           startAutoFetch(url);
         }
-        return emit(FeedDetailsState.loaded(atomFeed));
+        if (atomFeed.items?.isNotEmpty == true) {
+          return emit(FeedDetailsState.loaded(atomFeed));
+        } else {
+          return emit(FeedDetailsState.empty());
+        }
       }
       return emit(FeedDetailsState.error());
     } catch (e) {
@@ -42,13 +52,18 @@ class FeedDetailsCubit extends Cubit<FeedDetailsState> {
     }
   }
 
+  void formUrlAndLoad(String originalUrl, Map<String, String> paramValuesMap) {
+    String urlToLoad = originalUrl;
+    for (var k in paramValuesMap.keys) {
+      urlToLoad = urlToLoad.replaceAll('{$k}', paramValuesMap[k] ?? '');
+    }
+    load(urlToLoad);
+  }
+
   void startAutoFetch(String url) {
     _autoFetchTimer = Timer.periodic(
-      const Duration(seconds: 10),
-      (_) {
-        print("FETCHING");
-        load(url);
-      },
+      const Duration(minutes: 1),
+      (_) => load(url),
     );
   }
 

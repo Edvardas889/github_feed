@@ -9,7 +9,10 @@ class FeedDetailsRepository {
         "Accept": "application/atom+xml",
       });
 
-      return Right(response.body);
+      if(response.statusCode == 200){
+        return Right(response.body);
+      }
+      return Left(false);
     } catch (e, s) {
       return Left(false);
     }
