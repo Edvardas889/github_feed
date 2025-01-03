@@ -45,7 +45,7 @@ void main() {
       "returns error when fetch failed",
       build: () {
         when(() => mockMainFeedRepository.get())
-            .thenAnswer((_) async => Left(false));
+            .thenAnswer((_) async => Left(null));
         return mainFeedCubit;
       },
       act: (cubit) => cubit.load(),

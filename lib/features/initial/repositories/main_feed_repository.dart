@@ -15,7 +15,7 @@ class MainFeedRepository {
     required this.appSharedPreferences,
   });
 
-  Future<Either<bool, MainFeedModel>> get() async {
+  Future<Either<String?, MainFeedModel>> get() async {
     try {
       final mainFeedCache = await mainFeedModelBox.getLocal();
       if (mainFeedCache != null) {
@@ -37,8 +37,11 @@ class MainFeedRepository {
       final result = MainFeedModel.fromJson(responseJson);
       await mainFeedModelBox.save(result);
       return Right(result);
-    } catch (e, s) {
-      return Left(false);
+    } on http.ClientException{
+      return Left("No internet");
+    }
+    catch (e, s) {
+      return Left(null);
     }
   }
 }

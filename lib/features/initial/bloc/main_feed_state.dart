@@ -10,5 +10,7 @@ class MainFeedState with _$MainFeedState {
     List<String> mainFeedUrls,
   ) = _Loaded;
 
-  const factory MainFeedState.error() = _Error;
+  const factory MainFeedState.error({
+    String? errorMsg,
+  }) = _Error;
 }

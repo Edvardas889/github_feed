@@ -45,7 +45,7 @@ class FeedDetailsCubit extends Cubit<FeedDetailsState> {
           return emit(FeedDetailsState.empty());
         }
       }
-      return emit(FeedDetailsState.error());
+      return emit(FeedDetailsState.error(errorMsg: feedResult.left));
     } catch (e) {
       //LOG ERROR
       emit(const FeedDetailsState.error());

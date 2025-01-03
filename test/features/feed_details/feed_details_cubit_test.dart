@@ -45,13 +45,13 @@ void main() {
       "returns error when details fetch",
       build: () {
         when(() => mockFeedDetailsRepository.getAtom("url"))
-            .thenAnswer((_) async => Left(false));
+            .thenAnswer((_) async => Left("Error"));
         return feedDetails;
       },
       act: (cubit) => cubit.load("url"),
       expect: () => [
         FeedDetailsState.loading(),
-        FeedDetailsState.error(),
+        FeedDetailsState.error(errorMsg: "Error"),
       ],
     );
   });

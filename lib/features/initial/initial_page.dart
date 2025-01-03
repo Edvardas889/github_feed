@@ -87,6 +87,8 @@ class _InitialPageState extends State<_InitialPage>
                       ),
                     ],
                   ),
+                  error: (error) =>
+                      Center(child: Text(error.errorMsg ?? "Unexpected error")),
                   orElse: () => const SizedBox.shrink(),
                 );
               },
@@ -117,7 +119,7 @@ class _InitialPageState extends State<_InitialPage>
   void onRemoveAuthTokenClick() {
     context.read<AuthTokenCubit>().deleteToken();
     context.read<MainFeedCubit>().load(
-      clearCache: true,
-    );
+          clearCache: true,
+        );
   }
 }

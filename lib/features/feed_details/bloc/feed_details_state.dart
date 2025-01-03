@@ -16,5 +16,7 @@ class FeedDetailsState with _$FeedDetailsState {
     List<String?> paramsList,
   ) = _ParamsNeeded;
 
-  const factory FeedDetailsState.error() = _Error;
+  const factory FeedDetailsState.error({
+    String? errorMsg,
+  }) = _Error;
 }

@@ -93,6 +93,8 @@ class _FeedDetailsPageState extends State<_FeedDetailsPage> {
                       .toList(),
                 ),
               ),
+              error: (error) =>
+                  Center(child: Text(error.errorMsg ?? "Unexpected error")),
               orElse: () => Center(
                   child: Text(
                 "Error while fetching data occurred",

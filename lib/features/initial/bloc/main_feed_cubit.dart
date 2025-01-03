@@ -48,7 +48,7 @@ class MainFeedCubit extends Cubit<MainFeedState> {
 
         return emit(MainFeedState.loaded(result));
       }
-      return emit(MainFeedState.error());
+      return emit(MainFeedState.error(errorMsg: feedResult.left));
     } catch (e) {
       //LOG ERROR
       emit(const MainFeedState.error());
