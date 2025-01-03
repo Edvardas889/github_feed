@@ -29,6 +29,8 @@ mixin _$MainFeedModel {
   @JsonKey(name: "repository_discussions_category_url")
   String? get repositoryDiscussionsCategoryUrl =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: "current_user_public_url")
+  String? get currentUserPublicUrl => throw _privateConstructorUsedError;
   @JsonKey(name: "security_advisories_url")
   String? get securityAdvisoriesUrl => throw _privateConstructorUsedError;
 
@@ -55,6 +57,7 @@ abstract class $MainFeedModelCopyWith<$Res> {
       String? repositoryDiscussionsUrl,
       @JsonKey(name: "repository_discussions_category_url")
       String? repositoryDiscussionsCategoryUrl,
+      @JsonKey(name: "current_user_public_url") String? currentUserPublicUrl,
       @JsonKey(name: "security_advisories_url") String? securityAdvisoriesUrl});
 }
 
@@ -77,6 +80,7 @@ class _$MainFeedModelCopyWithImpl<$Res, $Val extends MainFeedModel>
     Object? userUrl = freezed,
     Object? repositoryDiscussionsUrl = freezed,
     Object? repositoryDiscussionsCategoryUrl = freezed,
+    Object? currentUserPublicUrl = freezed,
     Object? securityAdvisoriesUrl = freezed,
   }) {
     return _then(_value.copyWith(
@@ -96,6 +100,10 @@ class _$MainFeedModelCopyWithImpl<$Res, $Val extends MainFeedModel>
               repositoryDiscussionsCategoryUrl
           ? _value.repositoryDiscussionsCategoryUrl
           : repositoryDiscussionsCategoryUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      currentUserPublicUrl: freezed == currentUserPublicUrl
+          ? _value.currentUserPublicUrl
+          : currentUserPublicUrl // ignore: cast_nullable_to_non_nullable
               as String?,
       securityAdvisoriesUrl: freezed == securityAdvisoriesUrl
           ? _value.securityAdvisoriesUrl
@@ -120,6 +128,7 @@ abstract class _$$MainFeedModelImplCopyWith<$Res>
       String? repositoryDiscussionsUrl,
       @JsonKey(name: "repository_discussions_category_url")
       String? repositoryDiscussionsCategoryUrl,
+      @JsonKey(name: "current_user_public_url") String? currentUserPublicUrl,
       @JsonKey(name: "security_advisories_url") String? securityAdvisoriesUrl});
 }
 
@@ -140,6 +149,7 @@ class __$$MainFeedModelImplCopyWithImpl<$Res>
     Object? userUrl = freezed,
     Object? repositoryDiscussionsUrl = freezed,
     Object? repositoryDiscussionsCategoryUrl = freezed,
+    Object? currentUserPublicUrl = freezed,
     Object? securityAdvisoriesUrl = freezed,
   }) {
     return _then(_$MainFeedModelImpl(
@@ -160,6 +170,10 @@ class __$$MainFeedModelImplCopyWithImpl<$Res>
           ? _value.repositoryDiscussionsCategoryUrl
           : repositoryDiscussionsCategoryUrl // ignore: cast_nullable_to_non_nullable
               as String?,
+      currentUserPublicUrl: freezed == currentUserPublicUrl
+          ? _value.currentUserPublicUrl
+          : currentUserPublicUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       securityAdvisoriesUrl: freezed == securityAdvisoriesUrl
           ? _value.securityAdvisoriesUrl
           : securityAdvisoriesUrl // ignore: cast_nullable_to_non_nullable
@@ -178,6 +192,7 @@ class _$MainFeedModelImpl implements _MainFeedModel {
       this.repositoryDiscussionsUrl,
       @JsonKey(name: "repository_discussions_category_url")
       this.repositoryDiscussionsCategoryUrl,
+      @JsonKey(name: "current_user_public_url") this.currentUserPublicUrl,
       @JsonKey(name: "security_advisories_url") this.securityAdvisoriesUrl});
 
   factory _$MainFeedModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -196,12 +211,15 @@ class _$MainFeedModelImpl implements _MainFeedModel {
   @JsonKey(name: "repository_discussions_category_url")
   final String? repositoryDiscussionsCategoryUrl;
   @override
+  @JsonKey(name: "current_user_public_url")
+  final String? currentUserPublicUrl;
+  @override
   @JsonKey(name: "security_advisories_url")
   final String? securityAdvisoriesUrl;
 
   @override
   String toString() {
-    return 'MainFeedModel(timelineUrl: $timelineUrl, userUrl: $userUrl, repositoryDiscussionsUrl: $repositoryDiscussionsUrl, repositoryDiscussionsCategoryUrl: $repositoryDiscussionsCategoryUrl, securityAdvisoriesUrl: $securityAdvisoriesUrl)';
+    return 'MainFeedModel(timelineUrl: $timelineUrl, userUrl: $userUrl, repositoryDiscussionsUrl: $repositoryDiscussionsUrl, repositoryDiscussionsCategoryUrl: $repositoryDiscussionsCategoryUrl, currentUserPublicUrl: $currentUserPublicUrl, securityAdvisoriesUrl: $securityAdvisoriesUrl)';
   }
 
   @override
@@ -219,6 +237,8 @@ class _$MainFeedModelImpl implements _MainFeedModel {
                     repositoryDiscussionsCategoryUrl) ||
                 other.repositoryDiscussionsCategoryUrl ==
                     repositoryDiscussionsCategoryUrl) &&
+            (identical(other.currentUserPublicUrl, currentUserPublicUrl) ||
+                other.currentUserPublicUrl == currentUserPublicUrl) &&
             (identical(other.securityAdvisoriesUrl, securityAdvisoriesUrl) ||
                 other.securityAdvisoriesUrl == securityAdvisoriesUrl));
   }
@@ -231,6 +251,7 @@ class _$MainFeedModelImpl implements _MainFeedModel {
       userUrl,
       repositoryDiscussionsUrl,
       repositoryDiscussionsCategoryUrl,
+      currentUserPublicUrl,
       securityAdvisoriesUrl);
 
   /// Create a copy of MainFeedModel
@@ -257,6 +278,8 @@ abstract class _MainFeedModel implements MainFeedModel {
       final String? repositoryDiscussionsUrl,
       @JsonKey(name: "repository_discussions_category_url")
       final String? repositoryDiscussionsCategoryUrl,
+      @JsonKey(name: "current_user_public_url")
+      final String? currentUserPublicUrl,
       @JsonKey(name: "security_advisories_url")
       final String? securityAdvisoriesUrl}) = _$MainFeedModelImpl;
 
@@ -275,6 +298,9 @@ abstract class _MainFeedModel implements MainFeedModel {
   @override
   @JsonKey(name: "repository_discussions_category_url")
   String? get repositoryDiscussionsCategoryUrl;
+  @override
+  @JsonKey(name: "current_user_public_url")
+  String? get currentUserPublicUrl;
   @override
   @JsonKey(name: "security_advisories_url")
   String? get securityAdvisoriesUrl;

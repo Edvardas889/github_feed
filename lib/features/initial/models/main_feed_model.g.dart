@@ -13,6 +13,7 @@ _$MainFeedModelImpl _$$MainFeedModelImplFromJson(Map<String, dynamic> json) =>
       repositoryDiscussionsUrl: json['repository_discussions_url'] as String?,
       repositoryDiscussionsCategoryUrl:
           json['repository_discussions_category_url'] as String?,
+      currentUserPublicUrl: json['current_user_public_url'] as String?,
       securityAdvisoriesUrl: json['security_advisories_url'] as String?,
     );
 
@@ -23,5 +24,6 @@ Map<String, dynamic> _$$MainFeedModelImplToJson(_$MainFeedModelImpl instance) =>
       'repository_discussions_url': instance.repositoryDiscussionsUrl,
       'repository_discussions_category_url':
           instance.repositoryDiscussionsCategoryUrl,
+      'current_user_public_url': instance.currentUserPublicUrl,
       'security_advisories_url': instance.securityAdvisoriesUrl,
     };

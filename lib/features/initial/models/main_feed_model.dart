@@ -13,6 +13,8 @@ class MainFeedModel with _$MainFeedModel {
     final String? repositoryDiscussionsUrl,
     @JsonKey(name: "repository_discussions_category_url")
     final String? repositoryDiscussionsCategoryUrl,
+    @JsonKey(name: "current_user_public_url")
+    final String? currentUserPublicUrl,
     @JsonKey(name: "security_advisories_url")
     final String? securityAdvisoriesUrl,
   }) = _MainFeedModel;
